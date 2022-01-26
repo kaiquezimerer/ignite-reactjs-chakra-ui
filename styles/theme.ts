@@ -32,6 +32,9 @@ export const theme = extendTheme({
         bg: 'white.500',
         color: 'black.100',
       },
+      'h1, h2, h3': {
+        color: 'white.500'
+      },
       a: {
         cursor: 'pointer',
       }

@@ -1,8 +1,5 @@
 import Image from 'next/image';
-import {
-  Center,
-  Heading,
-} from '@chakra-ui/react';
+import { Center, Heading } from '@chakra-ui/react';
 
 // Header
 export default function Header() {
