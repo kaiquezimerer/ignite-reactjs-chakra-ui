@@ -276,7 +276,9 @@ export default function Home() {
                 <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
                   América do Norte
                 </Heading>
-                <Heading as="h3" fontSize={['14px', '24px']}>O continente mais antigo.</Heading>
+                <Heading as="h3" fontSize={['14px', '24px']}>
+                  A terra do progresso e da oportunidade.
+                </Heading>
               </Flex>
             </SwiperSlide>
             <SwiperSlide>
@@ -291,7 +293,9 @@ export default function Home() {
                 <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
                   América do Sul
                 </Heading>
-                <Heading as="h3" fontSize={['14px', '24px']}>O continente mais antigo.</Heading>
+                <Heading as="h3" fontSize={['14px', '24px']}>
+                  Diversidade e paraíso natural.
+                </Heading>
               </Flex>
             </SwiperSlide>
             <SwiperSlide>
@@ -306,7 +310,9 @@ export default function Home() {
                 <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
                   Ásia
                 </Heading>
-                <Heading as="h3" fontSize={['14px', '24px']}>O continente mais antigo.</Heading>
+                <Heading as="h3" fontSize={['14px', '24px']}>
+                  A terra da sabedoria e da cultura.
+                </Heading>
               </Flex>
             </SwiperSlide>
             <SwiperSlide>
@@ -321,7 +327,9 @@ export default function Home() {
                 <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
                   África
                 </Heading>
-                <Heading as="h3" fontSize={['14px', '24px']}>O continente mais antigo.</Heading>
+                <Heading as="h3" fontSize={['14px', '24px']}>
+                  O berço da humanidade.
+                </Heading>
               </Flex>
             </SwiperSlide>
             <SwiperSlide>
@@ -336,7 +344,9 @@ export default function Home() {
                 <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
                   Europa
                 </Heading>
-                <Heading as="h3" fontSize={['14px', '24px']}>O continente mais antigo.</Heading>
+                <Heading as="h3" fontSize={['14px', '24px']}>
+                  O continente mais antigo.
+                </Heading>
               </Flex>
             </SwiperSlide>
             <SwiperSlide>
@@ -351,7 +361,9 @@ export default function Home() {
                 <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
                   Oceania
                 </Heading>
-                <Heading as="h3" fontSize={['14px', '24px']}>O continente mais antigo.</Heading>
+                <Heading as="h3" fontSize={['14px', '24px']}>
+                  O continente dos arquipélogos.
+                </Heading>
               </Flex>
             </SwiperSlide>
           </Swiper>
