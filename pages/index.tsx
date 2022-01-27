@@ -1,7 +1,15 @@
+import { useEffect } from 'react';
 import Image from 'next/image';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import SwiperCore, { Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Box, Heading, Flex, Text, useBreakpointValue } from '@chakra-ui/react';
 
-import Header from "../components/Header";
+import Header from '../components/Header';
+import styles from '../styles/swiper.module.css';
+
+SwiperCore.use([Navigation]);
 
 export default function Home() {
   const isWideVersion = useBreakpointValue({
@@ -15,19 +23,19 @@ export default function Home() {
       <Header />
       {/* Banner */}
       <Box
+        px={4}
         as="section"
         bgImg="url('/img/banner-bg.png')"
         bgPos="top center"
         bgRepeat="no-repeat"
         bgSize="cover"
-        px="4"
       >
         <Box
+          position="relative"
           maxW={1160}
           minH={335}
           mx="auto"
-          position="relative"
-          py={isWideVersion ? 20 : 10}
+          py={20}
         >
           <Heading
             as="h2"
@@ -40,10 +48,10 @@ export default function Home() {
           <Heading
             as="h3"
             size="md"
+            maxW={524}
+            mt={5}
             fontWeight={400}
             lineHeight="1.4"
-            maxW={524}
-            mt="5"
           >
             Chegou a hora de tirar do papel a viagem que você sempre sonhou.
           </Heading>
@@ -69,11 +77,11 @@ export default function Home() {
       </Box>
       {/* Travel types */}
       <Box
+        position="relative"
         maxW={1160}
         mx="auto"
-        py="20"
-        my="8"
-        position="relative"
+        my={8}
+        py={20}
         _after={{
           content: '" "',
           display: 'block',
@@ -90,7 +98,7 @@ export default function Home() {
           flexWrap="wrap"
           justify={isWideVersion ? 'space-between' : 'space-around'}
         >
-          <Flex justify="center" flexDir="column" mx="2">
+          <Flex justify="center" flexDir="column" mx={2}>
             {
               isWideVersion && (
                 <Image
@@ -98,12 +106,12 @@ export default function Home() {
                   alt=""
                   role="presentation"
                   width="85px"
-                  height="85"
+                  height="85px"
                 />
               )
             }
             <Text
-              mt="5"
+              mt={5}
               fontSize="2xl"
               fontWeight={600}
               textTransform="lowercase"
@@ -111,7 +119,7 @@ export default function Home() {
               Vida noturna
             </Text>
           </Flex>
-          <Flex justify="center" flexDir="column" mx="2">
+          <Flex justify="center" flexDir="column" mx={2}>
             {
               isWideVersion && (
                 <Image
@@ -119,7 +127,7 @@ export default function Home() {
                   alt=""
                   role="presentation"
                   width="85px"
-                  height="85"
+                  height="85px"
                 />
               )
             }
@@ -132,7 +140,7 @@ export default function Home() {
               Praia
             </Text>
           </Flex>
-          <Flex justify="center" flexDir="column" mx="2">
+          <Flex justify="center" flexDir="column" mx={2}>
             {
               isWideVersion && (
                 <Image
@@ -140,7 +148,7 @@ export default function Home() {
                   alt=""
                   role="presentation"
                   width="85px"
-                  height="85"
+                  height="85px"
                 />
               )
             }
@@ -153,7 +161,7 @@ export default function Home() {
               Moderno
             </Text>
           </Flex>
-          <Flex justify="center" flexDir="column" mx="2">
+          <Flex justify="center" flexDir="column" mx={2}>
             {
               isWideVersion && (
                 <Image
@@ -161,7 +169,7 @@ export default function Home() {
                   alt=""
                   role="presentation"
                   width="85px"
-                  height="85"
+                  height="85px"
                 />
               )
             }
@@ -174,7 +182,7 @@ export default function Home() {
               Clássico
             </Text>
           </Flex>
-          <Flex justify="center" flexDir="column" mx="2">
+          <Flex justify="center" flexDir="column" mx={2}>
             {
               isWideVersion && (
                 <Image
@@ -182,7 +190,7 @@ export default function Home() {
                   alt=""
                   role="presentation"
                   width="85px"
-                  height="85"
+                  height="85px"
                 />
               )
             }
@@ -198,7 +206,7 @@ export default function Home() {
         </Flex>
       </Box>
       {/* Continents (Slider) */}
-      <Box maxW={1160} mx="auto">
+      <Box maxW={1160} mx="auto" mt={14}>
         <Heading
           as="h2"
           color="black.100"
@@ -209,9 +217,99 @@ export default function Home() {
         >
           Vamos nessa? <br />Então escolha seu continente
         </Heading>
-        {/* TODO: Add continent Swipper */}
-        <Box bg="gray" w="100%" h="450px" my="54">
-
+        <Box bg="gray" w="100%" h="450px" my={54}>
+          <Swiper navigation={true} className={styles.swiper}>
+            <SwiperSlide>
+              <Flex
+                bgImg="url(/img/europa.png)"
+                justifyContent="center"
+                align="center"
+                flexDirection="column"
+                w="100%"
+                h="100%"
+              >
+                <Heading as="h2" fontSize="48px" fontWeight={700} mb={4}>
+                  América do Norte
+                </Heading>
+                <Heading as="h3" fontSize="24px">O continente mais antigo.</Heading>
+              </Flex>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Flex
+                bgImg="url(/img/europa.png)"
+                justifyContent="center"
+                align="center"
+                flexDirection="column"
+                w="100%"
+                h="100%"
+              >
+                <Heading as="h2" fontSize="48px" fontWeight={700} mb={4}>
+                  América do Sul
+                </Heading>
+                <Heading as="h3" fontSize="24px">O continente mais antigo.</Heading>
+              </Flex>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Flex
+                bgImg="url(/img/europa.png)"
+                justifyContent="center"
+                align="center"
+                flexDirection="column"
+                w="100%"
+                h="100%"
+              >
+                <Heading as="h2" fontSize="48px" fontWeight={700} mb={4}>
+                  Ásia
+                </Heading>
+                <Heading as="h3" fontSize="24px">O continente mais antigo.</Heading>
+              </Flex>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Flex
+                bgImg="url(/img/europa.png)"
+                justifyContent="center"
+                align="center"
+                flexDirection="column"
+                w="100%"
+                h="100%"
+              >
+                <Heading as="h2" fontSize="48px" fontWeight={700} mb={4}>
+                  África
+                </Heading>
+                <Heading as="h3" fontSize="24px">O continente mais antigo.</Heading>
+              </Flex>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Flex
+                bgImg="url(/img/europa.png)"
+                justifyContent="center"
+                align="center"
+                flexDirection="column"
+                w="100%"
+                h="100%"
+              >
+                <Heading as="h2" fontSize="48px" fontWeight={700} mb={4}>
+                  Europa
+                </Heading>
+                <Heading as="h3" fontSize="24px">O continente mais antigo.</Heading>
+              </Flex>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Flex
+                bgImg="url(/img/europa.png)"
+                justifyContent="center"
+                align="center"
+                flexDirection="column"
+                w="100%"
+                h="100%"
+              >
+                <Heading as="h2" fontSize="48px" fontWeight={700} mb={4}>
+                  Oceania
+                </Heading>
+                <Heading as="h3" fontSize="24px">O continente mais antigo.</Heading>
+              </Flex>
+            </SwiperSlide>
+          </Swiper>
         </Box>
       </Box>
     </main>
