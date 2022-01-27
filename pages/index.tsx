@@ -112,9 +112,18 @@ export default function Home() {
             }
             <Text
               mt={5}
-              fontSize="2xl"
+              fontSize={['xl', "2xl"]}
               fontWeight={600}
               textTransform="lowercase"
+              _before={isWideVersion ? null : {
+                content: '" "',
+                borderRadius: '50%',
+                display: 'inline-block',
+                width: '8px',
+                height: '8px',
+                backgroundColor: 'yellow.800',
+                margin: '2px 5px',
+              }}
             >
               Vida noturna
             </Text>
@@ -133,9 +142,18 @@ export default function Home() {
             }
             <Text
               mt="5"
-              fontSize="2xl"
+              fontSize={['xl', "2xl"]}
               fontWeight={600}
               textTransform="lowercase"
+              _before={isWideVersion ? null : {
+                content: '" "',
+                borderRadius: '50%',
+                display: 'inline-block',
+                width: '8px',
+                height: '8px',
+                backgroundColor: 'yellow.800',
+                margin: '2px 5px',
+              }}
             >
               Praia
             </Text>
@@ -154,9 +172,18 @@ export default function Home() {
             }
             <Text
               mt="5"
-              fontSize="2xl"
+              fontSize={['xl', "2xl"]}
               fontWeight={600}
               textTransform="lowercase"
+              _before={isWideVersion ? null : {
+                content: '" "',
+                borderRadius: '50%',
+                display: 'inline-block',
+                width: '8px',
+                height: '8px',
+                backgroundColor: 'yellow.800',
+                margin: '2px 5px',
+              }}
             >
               Moderno
             </Text>
@@ -175,9 +202,18 @@ export default function Home() {
             }
             <Text
               mt="5"
-              fontSize="2xl"
+              fontSize={['xl', "2xl"]}
               fontWeight={600}
               textTransform="lowercase"
+              _before={isWideVersion ? null : {
+                content: '" "',
+                borderRadius: '50%',
+                display: 'inline-block',
+                width: '8px',
+                height: '8px',
+                backgroundColor: 'yellow.800',
+                margin: '2px 5px',
+              }}
             >
               Clássico
             </Text>
@@ -196,9 +232,18 @@ export default function Home() {
             }
             <Text
               mt="5"
-              fontSize="2xl"
+              fontSize={['xl', "2xl"]}
               fontWeight={600}
               textTransform="lowercase"
+              _before={isWideVersion ? null : {
+                content: '" "',
+                borderRadius: '50%',
+                display: 'inline-block',
+                width: '8px',
+                height: '8px',
+                backgroundColor: 'yellow.800',
+                margin: '2px 5px',
+              }}
             >
               E mais...
             </Text>
@@ -210,7 +255,7 @@ export default function Home() {
         <Heading
           as="h2"
           color="black.100"
-          fontSize="4xl"
+          fontSize={['2xl', '4xl']}
           fontWeight={500}
           lineHeight={1.6}
           textAlign="center"
@@ -228,10 +273,10 @@ export default function Home() {
                 w="100%"
                 h="100%"
               >
-                <Heading as="h2" fontSize="48px" fontWeight={700} mb={4}>
+                <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
                   América do Norte
                 </Heading>
-                <Heading as="h3" fontSize="24px">O continente mais antigo.</Heading>
+                <Heading as="h3" fontSize={['14px', '24px']}>O continente mais antigo.</Heading>
               </Flex>
             </SwiperSlide>
             <SwiperSlide>
@@ -243,10 +288,10 @@ export default function Home() {
                 w="100%"
                 h="100%"
               >
-                <Heading as="h2" fontSize="48px" fontWeight={700} mb={4}>
+                <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
                   América do Sul
                 </Heading>
-                <Heading as="h3" fontSize="24px">O continente mais antigo.</Heading>
+                <Heading as="h3" fontSize={['14px', '24px']}>O continente mais antigo.</Heading>
               </Flex>
             </SwiperSlide>
             <SwiperSlide>
@@ -258,10 +303,10 @@ export default function Home() {
                 w="100%"
                 h="100%"
               >
-                <Heading as="h2" fontSize="48px" fontWeight={700} mb={4}>
+                <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
                   Ásia
                 </Heading>
-                <Heading as="h3" fontSize="24px">O continente mais antigo.</Heading>
+                <Heading as="h3" fontSize={['14px', '24px']}>O continente mais antigo.</Heading>
               </Flex>
             </SwiperSlide>
             <SwiperSlide>
@@ -273,10 +318,10 @@ export default function Home() {
                 w="100%"
                 h="100%"
               >
-                <Heading as="h2" fontSize="48px" fontWeight={700} mb={4}>
+                <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
                   África
                 </Heading>
-                <Heading as="h3" fontSize="24px">O continente mais antigo.</Heading>
+                <Heading as="h3" fontSize={['14px', '24px']}>O continente mais antigo.</Heading>
               </Flex>
             </SwiperSlide>
             <SwiperSlide>
@@ -288,10 +333,10 @@ export default function Home() {
                 w="100%"
                 h="100%"
               >
-                <Heading as="h2" fontSize="48px" fontWeight={700} mb={4}>
+                <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
                   Europa
                 </Heading>
-                <Heading as="h3" fontSize="24px">O continente mais antigo.</Heading>
+                <Heading as="h3" fontSize={['14px', '24px']}>O continente mais antigo.</Heading>
               </Flex>
             </SwiperSlide>
             <SwiperSlide>
@@ -303,10 +348,10 @@ export default function Home() {
                 w="100%"
                 h="100%"
               >
-                <Heading as="h2" fontSize="48px" fontWeight={700} mb={4}>
+                <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
                   Oceania
                 </Heading>
-                <Heading as="h3" fontSize="24px">O continente mais antigo.</Heading>
+                <Heading as="h3" fontSize={['14px', '24px']}>O continente mais antigo.</Heading>
               </Flex>
             </SwiperSlide>
           </Swiper>
