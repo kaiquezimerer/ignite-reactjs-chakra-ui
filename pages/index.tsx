@@ -24,9 +24,10 @@ export default function Home() {
       >
         <Box
           maxW={1160}
+          minH={335}
           mx="auto"
           position="relative"
-          py={isWideVersion ? '20' : '8'}
+          py={isWideVersion ? 20 : 10}
         >
           <Heading
             as="h2"
