@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -265,106 +265,118 @@ export default function Home() {
         <Box bg="gray" w="100%" h="450px" my={54}>
           <Swiper navigation={true} className={styles.swiper}>
             <SwiperSlide>
-              <Flex
-                bgImg="url(/img/europa.png)"
-                justifyContent="center"
-                align="center"
-                flexDirection="column"
-                w="100%"
-                h="100%"
-              >
-                <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
-                  América do Norte
-                </Heading>
-                <Heading as="h3" fontSize={['14px', '24px']}>
-                  A terra do progresso e da oportunidade.
-                </Heading>
-              </Flex>
+              <Link href="/continente/america-do-norte" passHref>
+                <Flex
+                  bgImg="url(/img/europa.png)"
+                  justifyContent="center"
+                  align="center"
+                  flexDirection="column"
+                  w="100%"
+                  h="100%"
+                >
+                  <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
+                    América do Norte
+                  </Heading>
+                  <Heading as="h3" fontSize={['14px', '24px']}>
+                    A terra do progresso e da oportunidade.
+                  </Heading>
+                </Flex>
+              </Link>
             </SwiperSlide>
             <SwiperSlide>
-              <Flex
-                bgImg="url(/img/europa.png)"
-                justifyContent="center"
-                align="center"
-                flexDirection="column"
-                w="100%"
-                h="100%"
-              >
-                <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
-                  América do Sul
-                </Heading>
-                <Heading as="h3" fontSize={['14px', '24px']}>
-                  Diversidade e paraíso natural.
-                </Heading>
-              </Flex>
+              <Link href="/continente/america-do-sul" passHref>
+                <Flex
+                  bgImg="url(/img/europa.png)"
+                  justifyContent="center"
+                  align="center"
+                  flexDirection="column"
+                  w="100%"
+                  h="100%"
+                >
+                  <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
+                    América do Sul
+                  </Heading>
+                  <Heading as="h3" fontSize={['14px', '24px']}>
+                    Diversidade e paraíso natural.
+                  </Heading>
+                </Flex>
+              </Link>
             </SwiperSlide>
             <SwiperSlide>
-              <Flex
-                bgImg="url(/img/europa.png)"
-                justifyContent="center"
-                align="center"
-                flexDirection="column"
-                w="100%"
-                h="100%"
-              >
-                <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
-                  Ásia
-                </Heading>
-                <Heading as="h3" fontSize={['14px', '24px']}>
-                  A terra da sabedoria e da cultura.
-                </Heading>
-              </Flex>
+              <Link href="/continente/asia" passHref>
+                <Flex
+                  bgImg="url(/img/europa.png)"
+                  justifyContent="center"
+                  align="center"
+                  flexDirection="column"
+                  w="100%"
+                  h="100%"
+                >
+                  <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
+                    Ásia
+                  </Heading>
+                  <Heading as="h3" fontSize={['14px', '24px']}>
+                    A terra da sabedoria e da cultura.
+                  </Heading>
+                </Flex>
+              </Link>
             </SwiperSlide>
             <SwiperSlide>
-              <Flex
-                bgImg="url(/img/europa.png)"
-                justifyContent="center"
-                align="center"
-                flexDirection="column"
-                w="100%"
-                h="100%"
-              >
-                <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
-                  África
-                </Heading>
-                <Heading as="h3" fontSize={['14px', '24px']}>
-                  O berço da humanidade.
-                </Heading>
-              </Flex>
+              <Link href="/continente/africa" passHref>
+                <Flex
+                  bgImg="url(/img/europa.png)"
+                  justifyContent="center"
+                  align="center"
+                  flexDirection="column"
+                  w="100%"
+                  h="100%"
+                >
+                  <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
+                    África
+                  </Heading>
+                  <Heading as="h3" fontSize={['14px', '24px']}>
+                    O berço da humanidade.
+                  </Heading>
+                </Flex>
+              </Link>
             </SwiperSlide>
             <SwiperSlide>
-              <Flex
-                bgImg="url(/img/europa.png)"
-                justifyContent="center"
-                align="center"
-                flexDirection="column"
-                w="100%"
-                h="100%"
-              >
-                <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
-                  Europa
-                </Heading>
-                <Heading as="h3" fontSize={['14px', '24px']}>
-                  O continente mais antigo.
-                </Heading>
-              </Flex>
+              <Link href="/continente/europa" passHref>
+                <Flex
+                  bgImg="url(/img/europa.png)"
+                  justifyContent="center"
+                  align="center"
+                  flexDirection="column"
+                  w="100%"
+                  h="100%"
+                >
+                  <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
+                    Europa
+                  </Heading>
+                  <Heading as="h3" fontSize={['14px', '24px']}>
+                    O continente mais antigo.
+                  </Heading>
+                </Flex>
+              </Link>
             </SwiperSlide>
             <SwiperSlide>
-              <Flex
-                bgImg="url(/img/europa.png)"
-                justifyContent="center"
-                align="center"
-                flexDirection="column"
-                w="100%"
-                h="100%"
-              >
-                <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
-                  Oceania
-                </Heading>
-                <Heading as="h3" fontSize={['14px', '24px']}>
-                  O continente dos arquipélogos.
-                </Heading>
-              </Flex>
+              <Link href="/continente/oceania" passHref>
+                <Flex
+                  bgImg="url(/img/europa.png)"
+                  justifyContent="center"
+                  align="center"
+                  flexDirection="column"
+                  w="100%"
+                  h="100%"
+                >
+                  <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
+                    Oceania
+                  </Heading>
+                  <Heading as="h3" fontSize={['14px', '24px']}>
+                    O continente dos arquipélogos.
+                  </Heading>
+                </Flex>
+              </Link>
             </SwiperSlide>
           </Swiper>
         </Box>
