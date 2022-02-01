@@ -2,14 +2,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import SwiperCore, { Navigation } from 'swiper';
+import "swiper/css/pagination";
+import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Box, Heading, Flex, Text, useBreakpointValue } from '@chakra-ui/react';
 
 import Header from '../components/Header';
 import styles from '../styles/swiper.module.css';
-
-SwiperCore.use([Navigation]);
 
 export default function Home() {
   const isWideVersion = useBreakpointValue({
@@ -263,7 +262,14 @@ export default function Home() {
           Vamos nessa? <br />Então escolha seu continente
         </Heading>
         <Box bg="gray" w="100%" h="450px" my={54}>
-          <Swiper navigation={true} className={styles.swiper}>
+          <Swiper  cssMode={true}
+            navigation={true}
+            pagination={true}
+            mousewheel={true}
+            keyboard={true}
+            modules={[Navigation, Pagination, Mousewheel, Keyboard]} 
+            className={styles.swiper}
+          >
             <SwiperSlide>
               <Link href="/continente/america-do-norte" passHref>
                 <Flex

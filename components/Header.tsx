@@ -23,14 +23,12 @@ export default function Header({ hasButton = false }: HeaderProps) {
       {
         hasButton && (
           <Link href="/" passHref>
-            <Tooltip label="Voltar">
-              <IconButton
-                variant="unstyled"
-                aria-label="Voltar"
-                position="absolute"
-                icon={<ChevronLeftIcon w={30} h={30} />}
-              />
-            </Tooltip>
+            <IconButton
+              variant="unstyled"
+              aria-label="Voltar"
+              position="absolute"
+              icon={<ChevronLeftIcon w={30} h={30} />}
+            />
           </Link>
         )
       }
