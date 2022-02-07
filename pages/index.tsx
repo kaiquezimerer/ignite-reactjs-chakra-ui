@@ -7,8 +7,8 @@ import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Box, Heading, Flex, Text, useBreakpointValue } from '@chakra-ui/react';
 
-import Header from '../components/Header';
-import styles from '../styles/swiper.module.css';
+import Header from 'components/Header';
+import styles from 'styles/swiper.module.css';
 
 export default function Home() {
   const isWideVersion = useBreakpointValue({
