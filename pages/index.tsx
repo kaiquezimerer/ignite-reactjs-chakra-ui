@@ -1,14 +1,9 @@
-import Link from 'next/link';
 import Image from 'next/image';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import "swiper/css/pagination";
-import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Box, Heading, Flex, Text, useBreakpointValue } from '@chakra-ui/react';
+import { Box, Flex, Heading, useBreakpointValue } from '@chakra-ui/react';
 
 import Header from 'components/Header';
-import styles from 'styles/swiper.module.css';
+import ListItem from 'components/Home/ListIcon';
+import Slider from 'components/Home/Slider';
 
 export default function Home() {
   const isWideVersion = useBreakpointValue({
@@ -22,8 +17,8 @@ export default function Home() {
       <Header />
       {/* Banner */}
       <Box
-        px={4}
         as="section"
+        px="4"
         bgImg="url('/img/banner-bg.png')"
         bgPos="top center"
         bgRepeat="no-repeat"
@@ -32,9 +27,9 @@ export default function Home() {
         <Box
           position="relative"
           maxW={1160}
-          minH={335}
+          maxH={335}
           mx="auto"
-          py={20}
+          py={['7','20']}
         >
           <Heading
             as="h2"
@@ -48,7 +43,7 @@ export default function Home() {
             as="h3"
             size="md"
             maxW={524}
-            mt={5}
+            mt="5"
             fontWeight={400}
             lineHeight="1.4"
           >
@@ -79,8 +74,8 @@ export default function Home() {
         position="relative"
         maxW={1160}
         mx="auto"
-        my={8}
-        py={20}
+        my={['4', '8']}
+        py={['9', '20']}
         _after={{
           content: '" "',
           display: 'block',
@@ -97,295 +92,26 @@ export default function Home() {
           flexWrap="wrap"
           justify={isWideVersion ? 'space-between' : 'space-around'}
         >
-          <Flex justify="center" flexDir="column" mx={2}>
-            {
-              isWideVersion && (
-                <Image
-                  src="/img/cocktail.svg"
-                  alt=""
-                  role="presentation"
-                  width="85px"
-                  height="85px"
-                />
-              )
-            }
-            <Text
-              mt={5}
-              fontSize={['xl', "2xl"]}
-              fontWeight={600}
-              textTransform="lowercase"
-              _before={isWideVersion ? null : {
-                content: '" "',
-                borderRadius: '50%',
-                display: 'inline-block',
-                width: '8px',
-                height: '8px',
-                backgroundColor: 'yellow.800',
-                margin: '2px 5px',
-              }}
-            >
-              Vida noturna
-            </Text>
-          </Flex>
-          <Flex justify="center" flexDir="column" mx={2}>
-            {
-              isWideVersion && (
-                <Image
-                  src="/img/surf.svg"
-                  alt=""
-                  role="presentation"
-                  width="85px"
-                  height="85px"
-                />
-              )
-            }
-            <Text
-              mt="5"
-              fontSize={['xl', "2xl"]}
-              fontWeight={600}
-              textTransform="lowercase"
-              _before={isWideVersion ? null : {
-                content: '" "',
-                borderRadius: '50%',
-                display: 'inline-block',
-                width: '8px',
-                height: '8px',
-                backgroundColor: 'yellow.800',
-                margin: '2px 5px',
-              }}
-            >
-              Praia
-            </Text>
-          </Flex>
-          <Flex justify="center" flexDir="column" mx={2}>
-            {
-              isWideVersion && (
-                <Image
-                  src="/img/building.svg"
-                  alt=""
-                  role="presentation"
-                  width="85px"
-                  height="85px"
-                />
-              )
-            }
-            <Text
-              mt="5"
-              fontSize={['xl', "2xl"]}
-              fontWeight={600}
-              textTransform="lowercase"
-              _before={isWideVersion ? null : {
-                content: '" "',
-                borderRadius: '50%',
-                display: 'inline-block',
-                width: '8px',
-                height: '8px',
-                backgroundColor: 'yellow.800',
-                margin: '2px 5px',
-              }}
-            >
-              Moderno
-            </Text>
-          </Flex>
-          <Flex justify="center" flexDir="column" mx={2}>
-            {
-              isWideVersion && (
-                <Image
-                  src="/img/museum.svg"
-                  alt=""
-                  role="presentation"
-                  width="85px"
-                  height="85px"
-                />
-              )
-            }
-            <Text
-              mt="5"
-              fontSize={['xl', "2xl"]}
-              fontWeight={600}
-              textTransform="lowercase"
-              _before={isWideVersion ? null : {
-                content: '" "',
-                borderRadius: '50%',
-                display: 'inline-block',
-                width: '8px',
-                height: '8px',
-                backgroundColor: 'yellow.800',
-                margin: '2px 5px',
-              }}
-            >
-              Clássico
-            </Text>
-          </Flex>
-          <Flex justify="center" flexDir="column" mx={2}>
-            {
-              isWideVersion && (
-                <Image
-                  src="/img/earth.svg"
-                  alt=""
-                  role="presentation"
-                  width="85px"
-                  height="85px"
-                />
-              )
-            }
-            <Text
-              mt="5"
-              fontSize={['xl', "2xl"]}
-              fontWeight={600}
-              textTransform="lowercase"
-              _before={isWideVersion ? null : {
-                content: '" "',
-                borderRadius: '50%',
-                display: 'inline-block',
-                width: '8px',
-                height: '8px',
-                backgroundColor: 'yellow.800',
-                margin: '2px 5px',
-              }}
-            >
-              E mais...
-            </Text>
-          </Flex>
+          <ListItem url="/img/cocktail.svg" label="Vida noturna" />
+          <ListItem url="/img/surf.svg" label="Praia" />
+          <ListItem url="/img/building.svg" label="Moderno" />
+          <ListItem url="/img/museum.svg" label="Clássico" />
+          <ListItem url="/img/earth.svg" label="E mais..." />
         </Flex>
       </Box>
       {/* Continents (Slider) */}
-      <Box maxW={1160} mx="auto" mt={14}>
+      <Box maxW={1160} mx="auto" mt={['5', '12']}>
         <Heading
           as="h2"
           color="black.100"
-          fontSize={['2xl', '4xl']}
+          fontSize={['xl', '4xl']}
           fontWeight={500}
           lineHeight={1.6}
           textAlign="center"
         >
           Vamos nessa? <br />Então escolha seu continente
         </Heading>
-        <Box bg="gray" w="100%" h="450px" my={54}>
-          <Swiper  cssMode={true}
-            navigation={true}
-            pagination={true}
-            mousewheel={true}
-            keyboard={true}
-            modules={[Navigation, Pagination, Mousewheel, Keyboard]} 
-            className={styles.swiper}
-          >
-            <SwiperSlide>
-              <Link href="/continente/america-do-norte" passHref>
-                <Flex
-                  bgImg="url(/img/europa.png)"
-                  justifyContent="center"
-                  align="center"
-                  flexDirection="column"
-                  w="100%"
-                  h="100%"
-                >
-                  <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
-                    América do Norte
-                  </Heading>
-                  <Heading as="h3" fontSize={['14px', '24px']}>
-                    A terra do progresso e da oportunidade.
-                  </Heading>
-                </Flex>
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link href="/continente/america-do-sul" passHref>
-                <Flex
-                  bgImg="url(/img/europa.png)"
-                  justifyContent="center"
-                  align="center"
-                  flexDirection="column"
-                  w="100%"
-                  h="100%"
-                >
-                  <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
-                    América do Sul
-                  </Heading>
-                  <Heading as="h3" fontSize={['14px', '24px']}>
-                    Diversidade e paraíso natural.
-                  </Heading>
-                </Flex>
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link href="/continente/asia" passHref>
-                <Flex
-                  bgImg="url(/img/europa.png)"
-                  justifyContent="center"
-                  align="center"
-                  flexDirection="column"
-                  w="100%"
-                  h="100%"
-                >
-                  <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
-                    Ásia
-                  </Heading>
-                  <Heading as="h3" fontSize={['14px', '24px']}>
-                    A terra da sabedoria e da cultura.
-                  </Heading>
-                </Flex>
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link href="/continente/africa" passHref>
-                <Flex
-                  bgImg="url(/img/europa.png)"
-                  justifyContent="center"
-                  align="center"
-                  flexDirection="column"
-                  w="100%"
-                  h="100%"
-                >
-                  <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
-                    África
-                  </Heading>
-                  <Heading as="h3" fontSize={['14px', '24px']}>
-                    O berço da humanidade.
-                  </Heading>
-                </Flex>
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link href="/continente/europa" passHref>
-                <Flex
-                  bgImg="url(/img/europa.png)"
-                  justifyContent="center"
-                  align="center"
-                  flexDirection="column"
-                  w="100%"
-                  h="100%"
-                >
-                  <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
-                    Europa
-                  </Heading>
-                  <Heading as="h3" fontSize={['14px', '24px']}>
-                    O continente mais antigo.
-                  </Heading>
-                </Flex>
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link href="/continente/oceania" passHref>
-                <Flex
-                  bgImg="url(/img/europa.png)"
-                  justifyContent="center"
-                  align="center"
-                  flexDirection="column"
-                  w="100%"
-                  h="100%"
-                >
-                  <Heading as="h2" fontSize={['24px', '48px']} fontWeight={700} mb={4}>
-                    Oceania
-                  </Heading>
-                  <Heading as="h3" fontSize={['14px', '24px']}>
-                    O continente dos arquipélogos.
-                  </Heading>
-                </Flex>
-              </Link>
-            </SwiperSlide>
-          </Swiper>
-        </Box>
+        <Slider />
       </Box>
     </main>
   );
