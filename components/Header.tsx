@@ -1,25 +1,16 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import { useRouter } from 'next/router';
 import { ChevronLeftIcon } from '@chakra-ui/icons';
-import { Box, Center, Heading, IconButton, Tooltip } from '@chakra-ui/react';
-import { useEffect } from 'react';
+import { Box, Center, Image, Heading, IconButton } from '@chakra-ui/react';
 
-interface HeaderProps {
+type HeaderProps = {
   hasButton?: boolean;
 }
 
 // Header
 export default function Header({ hasButton = false }: HeaderProps) {
-  const router = useRouter();
-  const { name } = router.query;
-
-  useEffect(() => {
-    name && console.log(name);
-  }, [name]);
-
   return (
-    <Box py="8" maxW={1160} mx="auto">
+    <Box maxW={1160} py="7" mx="auto">
+      {/* Back button */}
       {
         hasButton && (
           <Link href="/" passHref>
@@ -37,8 +28,8 @@ export default function Header({ hasButton = false }: HeaderProps) {
           <Image
             src="/img/logo.svg"
             alt="worldtrip"
-            width="185px"
-            height="45px"
+            w={185}
+            h={45}
           />
         </Heading>
       </Center>
