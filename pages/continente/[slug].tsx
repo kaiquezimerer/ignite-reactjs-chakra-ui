@@ -3,10 +3,8 @@ import {
   Box,
   Text,
   Flex,
-  Image,
   UnorderedList,
   Heading,
-  Center,
   useBreakpointValue,
 } from '@chakra-ui/react';
 import { WarningIcon } from '@chakra-ui/icons';
@@ -14,15 +12,30 @@ import { WarningIcon } from '@chakra-ui/icons';
 import Header from 'components/Header';
 import Item from 'components/Continent/Item';
 import CityCard from 'components/Continent/CityCard';
+import { useEffect } from 'react';
+import axios from 'axios';
 
 export default function Continent() {
   const router = useRouter();
-  const { name } = router.query;
+  const { slug } = router.query;
 
   const isWideVersion = useBreakpointValue({
     base: false,
     lg: true,
   });
+
+  async function loadContinentData() {
+    try {
+      const { data } = await axios.get(`http://localhost:3000/api/continentes/${slug}`);
+      console.log(data);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  useEffect(() => {
+    loadContinentData();
+  }, []);
 
   return (
     <>

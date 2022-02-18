@@ -14,11 +14,11 @@ export default function Slider() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [continents, setContinents] = useState<any>([]);
 
-  async function loadContinentsList() {
+  async function loadContinentsData() {
     setIsLoading(true);
 
     try {
-      const { data } = await axios.get('http://localhost:3000/api/continents');
+      const { data } = await axios.get('http://localhost:3000/api/continentes');
       setContinents(data);
     } catch (err) {
       console.error(err);
@@ -28,7 +28,7 @@ export default function Slider() {
   }
 
   useEffect(() => {
-    loadContinentsList();
+    loadContinentsData();
   }, [])
 
   if (isLoading) {
