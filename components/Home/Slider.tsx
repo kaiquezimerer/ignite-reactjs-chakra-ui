@@ -10,9 +10,16 @@ import styles from 'styles/swiper.module.css';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
+interface ContinentData {
+  name: string; 
+  slug: string; 
+  description: string;
+  bgUrl: string,
+}
+
 export default function Slider() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [continents, setContinents] = useState<any>([]);
+  const [continents, setContinents] = useState<ContinentData[]>([]);
 
   async function loadContinentsData() {
     setIsLoading(true);

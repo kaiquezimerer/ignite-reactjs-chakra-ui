@@ -6,18 +6,39 @@ import {
   UnorderedList,
   Heading,
   useBreakpointValue,
+  Center,
+  Spinner,
 } from '@chakra-ui/react';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import { WarningIcon } from '@chakra-ui/icons';
 
 import Header from 'components/Header';
 import Item from 'components/Continent/Item';
 import CityCard from 'components/Continent/CityCard';
-import { useEffect } from 'react';
-import axios from 'axios';
+
+interface CityData {
+  name: string;
+  city: string;
+  bgUrl: string;
+  flagUrl: string;
+}
+
+interface ContinentData {
+  name: string;
+  slug: string;
+  bgUrl: string;
+  resume: string;
+  cities: CityData[];
+}
 
 export default function Continent() {
   const router = useRouter();
   const { slug } = router.query;
+
+  const [continent, setContinent] = useState<ContinentData>({} as ContinentData);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
 
   const isWideVersion = useBreakpointValue({
     base: false,
@@ -25,17 +46,29 @@ export default function Continent() {
   });
 
   async function loadContinentData() {
+    setIsLoading(true);
+
     try {
       const { data } = await axios.get(`http://localhost:3000/api/continentes/${slug}`);
-      console.log(data);
+      setContinent(data.continent);
     } catch (err) {
       console.error(err);
+    } finally {
+      setIsLoading(false)
     }
   }
 
   useEffect(() => {
     loadContinentData();
   }, []);
+
+  if (isLoading) {
+    return (
+      <Center w="100vw" h="100vh">
+        <Spinner size="xl" color="gray.800" />
+      </Center>
+    );
+  }
 
   return (
     <>
@@ -66,7 +99,7 @@ export default function Continent() {
             bottom="60px"
 
           >
-            {name}
+            {continent?.name}
           </Heading>
         </Box>
       </Box>
@@ -85,7 +118,7 @@ export default function Continent() {
           textAlign="justify"
           lineHeight={['30px', '36px']}
         >
-          A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste
+          {continent?.resume}
         </Text>
         <UnorderedList
           listStyleType="none"
@@ -116,36 +149,14 @@ export default function Continent() {
           flexWrap="wrap"
           justifyContent={isWideVersion ? 'space-btween' : 'center'}
         >
-          <CityCard country={{
-            name: 'Reino Unido',
-            city: 'Londres',
-            bgUrl: '/img/londres.jpg',
-            flagUrl: '/img/reino-unido.png',
-          }} />
-          <CityCard country={{
-            name: 'França',
-            city: 'Paris',
-            bgUrl: '/img/paris.png',
-            flagUrl: '/img/franca.png',
-          }} />
-          <CityCard country={{
-            name: 'Itália',
-            city: 'Roma',
-            bgUrl: '/img/roma.png',
-            flagUrl: '/img/italia.png',
-          }} />
-          <CityCard country={{
-            name: 'República Tcheca',
-            city: 'Praga',
-            bgUrl: '/img/praga.png',
-            flagUrl: '/img/republica-tcheca.png',
-          }} />
-          <CityCard country={{
-            name: 'Holanda',
-            city: 'Amsterdã',
-            bgUrl: '/img/amsterda.png',
-            flagUrl: '/img/holanda.png',
-          }} />
+          {
+            continent?.cities?.map((city) => (
+              <CityCard 
+                key={city.city} 
+                country={{...city}} 
+              />
+            ))
+          }
         </Flex>
       </Box>
     </>
