@@ -19,7 +19,7 @@ Além de um editor de código como o [VSCode](https://code.visualstudio.com/).
     # Instale as dependências
     $ yarn install
     
-    # Em outro terminal/cmd, inicialize o projeto em modo de desenvolvimento
+    # Pelo terminal/cmd, inicialize o projeto em modo de desenvolvimento
     $ yarn dev
     
     # A aplicação iniciará na porta :3000 - acesse http://localhost:3000
