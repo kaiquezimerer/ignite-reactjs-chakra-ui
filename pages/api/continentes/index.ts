@@ -5,36 +5,36 @@ const CONTINENTS = [
     name: 'América do Norte', 
     slug: 'america-do-norte', 
     description: 'A terra do progresso e da oportunidade.',
-    bgUrl: '/img/europa.png',
+    bgUrl: '/img/continents/north-america.jpg',
   },
   { 
     name: 'América do Sul', 
     slug: 'america-do-sul', 
     description: 'Diversidade e paraíso natural.', 
-    bgUrl: '/img/europa.png',
+    bgUrl: '/img/continents/south-america.jpg',
   },
   { 
     name: 'Ásia', 
     slug: 'asia', 
     description: 'A terra da sabedoria e da cultura.', 
-    bgUrl: '/img/europa.png',
+    bgUrl: '/img/continents/asia.jpg',
   },
   { 
     name: 'África', 
     slug: 'africa', 
     description: 'O berço da humanidade.', 
-    bgUrl: '/img/europa.png',
+    bgUrl: '/img/continents/africa.jpg',
   },
   { name: 'Europa', 
     slug: 'europa', 
     description: 'O continente mais antigo.', 
-    bgUrl: '/img/europa.png',
+    bgUrl: '/img/continents/europa.png',
   },
   { 
     name: 'Oceania', 
     slug: 'oceania', 
     description: 'O continente dos arquipélogos.', 
-    bgUrl: '/img/europa.png',
+    bgUrl: '/img/continents/oceania.jpg',
   }
 ]
 

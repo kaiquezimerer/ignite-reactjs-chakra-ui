@@ -37,7 +37,7 @@ export default function Slider() {
         <Spinner color="gray.800" />
       </Center>
     );
-  } 
+  }
 
   return (
     <Box bg="gray" w="100%" h={[375, 450]} my={['5', '12']}>
@@ -52,32 +52,40 @@ export default function Slider() {
         {
           continents?.map((continent) => (
             <SwiperSlide key={continent.name}>
-              <Link href={`/continente/${continent.slug}`} passHref>
-                <Flex
-                  bgImg={`url(${continent.bgUrl})`}
-                  justifyContent="center"
-                  align="center"
-                  flexDirection="column"
-                  w="100%"
-                  h="100%"
-                >
-                  <Heading
-                    as="h2"
-                    mb="4"
-                    fontSize={['24px', '48px']}
-                    fontWeight={700}
-                  >
-                    {continent.name}
-                  </Heading>
-                  <Heading as="h3" fontSize={['14px', '24px']}>
-                    {continent.description}
-                  </Heading>
-                </Flex>
-              </Link>
+
+              <Flex
+                bgImg={`url(${continent.bgUrl})`}
+                justifyContent="center"
+                align="center"
+                flexDirection="column"
+                w="100%"
+                h="100%"
+              >
+                <Link href={`/continente/${continent.slug}`} passHref>
+                  <Box textAlign="center">
+                    <Heading
+                      as="h2"
+                      mb="4"
+                      fontSize={['24px', '48px']}
+                      fontWeight={700}
+                      textShadow="0 0 5px rgba(0,0,0,0.4)"
+                    >
+                      {continent.name}
+                    </Heading>
+                    <Heading
+                      as="h3"
+                      fontSize={['14px', '24px']}
+                      textShadow="0 0 5px rgba(0,0,0,0.4)"
+                    >
+                      {continent.description}
+                    </Heading>
+                  </Box>
+                </Link>
+              </Flex>
             </SwiperSlide>
           ))
         }
       </Swiper>
-    </Box>
+    </Box >
   );
 }
