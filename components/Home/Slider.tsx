@@ -1,14 +1,14 @@
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import Link from 'next/link';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Box, Heading, Flex, Center, Spinner } from '@chakra-ui/react';
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper';
+import { Box, Heading, Flex, Center, Spinner } from '@chakra-ui/react';
 
 import styles from 'styles/swiper.module.css';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
 
 interface ContinentData {
   name: string; 
@@ -25,7 +25,7 @@ export default function Slider() {
     setIsLoading(true);
 
     try {
-      const { data } = await axios.get('http://localhost:3000/api/continentes');
+      const { data } = await axios.get<ContinentData[]>('http://localhost:3000/api/continentes');
       setContinents(data);
     } catch (err) {
       console.error(err);
@@ -59,7 +59,6 @@ export default function Slider() {
         {
           continents?.map((continent) => (
             <SwiperSlide key={continent.name}>
-
               <Flex
                 bgImg={`url(${continent.bgUrl})`}
                 justifyContent="center"

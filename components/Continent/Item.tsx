@@ -1,10 +1,8 @@
 import {
-  Box,
-  Text,
+  Box, Text,
   ListItem,
   Tooltip,
-  Icon,
-  As,
+  Icon, As,
 } from '@chakra-ui/react';
 
 type ItemProps = {
@@ -33,7 +31,12 @@ export default function Item({ value, description, tooltip = null }: ItemProps) 
         {
           !!tooltip && (
             <Tooltip label={tooltip.text}>
-              <Icon as={tooltip.icon} boxSize="14px" m="2" color="gray.800" />
+              <Icon 
+                as={tooltip.icon} 
+                boxSize="14px" 
+                m="2" 
+                color="gray.800" 
+              />
             </Tooltip>
           )
         }

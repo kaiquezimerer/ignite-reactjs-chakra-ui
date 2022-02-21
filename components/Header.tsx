@@ -26,7 +26,7 @@ export default function Header({ hasButton = false }: HeaderProps) {
       <Center>
         <Heading as="h1">
           <Image
-            src="/img/logo.svg"
+            src="/img/icons/logo.svg"
             alt="worldtrip"
             w={185}
             h={45}

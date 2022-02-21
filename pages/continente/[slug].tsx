@@ -1,13 +1,11 @@
 import { useRouter } from 'next/router';
 import {
-  Box,
-  Text,
+  Box, Text,
   Flex,
   UnorderedList,
   Heading,
   useBreakpointValue,
-  Center,
-  Spinner,
+  Center, Spinner,
 } from '@chakra-ui/react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -38,7 +36,6 @@ export default function Continent() {
 
   const [continent, setContinent] = useState<ContinentData>({} as ContinentData);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-
 
   const isWideVersion = useBreakpointValue({
     base: false,
@@ -130,7 +127,14 @@ export default function Continent() {
         >
           <Item value="50" description="países" />
           <Item value="60" description="línguas" />
-          <Item value="60" description="cidades +100" tooltip={{ icon: WarningIcon, text: 'Ver mais cidades' }} />
+          <Item 
+            value="60" 
+            description="cidades +100" 
+            tooltip={{ 
+              icon: WarningIcon, 
+              text: 'Ver mais cidades' 
+            }} 
+          />
         </UnorderedList>
       </Flex>
       {/* City list */}

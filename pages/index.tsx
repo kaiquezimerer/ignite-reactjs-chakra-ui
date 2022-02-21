@@ -1,5 +1,9 @@
 import Image from 'next/image';
-import { Box, Flex, Heading, useBreakpointValue } from '@chakra-ui/react';
+import { 
+  Box, Flex, 
+  Heading, 
+  useBreakpointValue, 
+} from '@chakra-ui/react';
 
 import Header from 'components/Header';
 import ListItem from 'components/Home/ListIcon';
@@ -58,7 +62,7 @@ export default function Home() {
                 transform="rotate(3deg)"
               >
                 <Image
-                  src="/img/airplane.svg"
+                  src="/img/icons/airplane.svg"
                   alt=""
                   role="presentation"
                   width="417px"
@@ -92,15 +96,19 @@ export default function Home() {
           flexWrap="wrap"
           justify={isWideVersion ? 'space-between' : 'space-around'}
         >
-          <ListItem url="/img/cocktail.svg" label="Vida noturna" />
-          <ListItem url="/img/surf.svg" label="Praia" />
-          <ListItem url="/img/building.svg" label="Moderno" />
-          <ListItem url="/img/museum.svg" label="Clássico" />
-          <ListItem url="/img/earth.svg" label="E mais..." />
+          <ListItem url="/img/icons/cocktail.svg" label="Vida noturna" />
+          <ListItem url="/img/icons/surf.svg" label="Praia" />
+          <ListItem url="/img/icons/building.svg" label="Moderno" />
+          <ListItem url="/img/icons/museum.svg" label="Clássico" />
+          <ListItem url="/img/icons/earth.svg" label="E mais..." />
         </Flex>
       </Box>
       {/* Continents (Slider) */}
-      <Box maxW={1160} mx="auto" mt={['5', '12']}>
+      <Box 
+        maxW={1160} 
+        mx="auto" 
+        mt={['5', '12']}
+      >
         <Heading
           as="h2"
           color="black.100"

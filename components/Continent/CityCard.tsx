@@ -42,6 +42,7 @@ export default function CityCard({ country }: CityCardProps) {
             fontWeight={600} 
             color="black.100" 
             mb={4}
+            whiteSpace="nowrap"
           >
             {city}
           </Heading>
@@ -50,6 +51,7 @@ export default function CityCard({ country }: CityCardProps) {
             size="xs" 
             fontWeight={400} 
             color="gray.800"
+            whiteSpace="nowrap"
           >
             {name}
           </Heading>
